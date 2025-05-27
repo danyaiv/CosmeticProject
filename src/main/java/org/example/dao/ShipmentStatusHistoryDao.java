@@ -15,7 +15,7 @@ public class ShipmentStatusHistoryDao {
 
     public List<ShipmentStatusHistory> getAll() {
         List<ShipmentStatusHistory> result = new ArrayList<>();
-        String sql = "SELECT status_history_id, shipment_id, changed_at, notes FROM shipment_status_history";
+        String sql = "SELECT status_history_id, shipment_id, changed_at, notes FROM shipmentstatushistory";
 
         try (PreparedStatement ps = connection.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
@@ -39,7 +39,7 @@ public class ShipmentStatusHistoryDao {
     }
 
     public ShipmentStatusHistory getById(int id) {
-        String sql = "SELECT status_history_id, shipment_id, changed_at, notes FROM shipment_status_history WHERE status_history_id = ?";
+        String sql = "SELECT status_history_id, shipment_id, changed_at, notes FROM shipmentstatushistory WHERE status_history_id = ?";
 
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, id);
@@ -63,7 +63,7 @@ public class ShipmentStatusHistoryDao {
     }
 
     public boolean create(ShipmentStatusHistory h) {
-        String sql = "INSERT INTO shipment_status_history (shipment_id, changed_at, notes) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO shipmentstatushistory (shipment_id, changed_at, notes) VALUES (?, ?, ?)";
 
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, h.getShipmentId());
@@ -77,7 +77,7 @@ public class ShipmentStatusHistoryDao {
     }
 
     public boolean update(ShipmentStatusHistory h) {
-        String sql = "UPDATE shipment_status_history SET shipment_id = ?, changed_at = ?, notes = ? WHERE status_history_id = ?";
+        String sql = "UPDATE shipmentstatushistory SET shipment_id = ?, changed_at = ?, notes = ? WHERE status_history_id = ?";
 
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, h.getShipmentId());
@@ -94,7 +94,7 @@ public class ShipmentStatusHistoryDao {
 
 
     public boolean delete(int id) {
-        String sql = "DELETE FROM shipment_status_history WHERE status_history_id = ?";
+        String sql = "DELETE FROM shipmentstatushistory WHERE status_history_id = ?";
 
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, id);

@@ -75,11 +75,11 @@ public class CosmeticApp {
         app.delete("/products/{id}", productController::deleteProduct);
 
         // --- Роуты для Линеек продукции ---
-        app.get("/product-lines", productLineController::getAllProductLines);
-        app.get("/product-lines/{id}", productLineController::getProductLineById);
-        app.post("/product-lines", productLineController::createProductLine);
-        app.put("/product-lines/{id}", productLineController::updateProductLine);
-        app.delete("/product-lines/{id}", productLineController::deleteProductLine);
+        app.get("/productLines", productLineController::getAllProductLines);
+        app.get("/productLines/{id}", productLineController::getProductLineById);
+        app.post("/productLines", productLineController::createProductLine);
+        app.put("/productLines/{id}", productLineController::updateProductLine);
+        app.delete("/productLines/{id}", productLineController::deleteProductLine);
 
         // --- Роуты для Заказов ---
         app.get("/orders", ordersController::getAllOrders);
@@ -89,11 +89,11 @@ public class CosmeticApp {
         app.delete("/orders/{id}", ordersController::deleteOrder);
 
         // --- Роуты для Позиции заказа ---
-        app.get("/order-items", orderItemController::getAllOrderItems);
-        app.get("/order-items/{id}", orderItemController::getOrderItemById);
-        app.post("/order-items", orderItemController::createOrderItem);
-        app.put("/order-items/{id}", orderItemController::updateOrderItem);
-        app.delete("/order-items/{id}", orderItemController::deleteOrderItem);
+        app.get("/orderItems", orderItemController::getAllOrderItems);
+        app.get("/orderItems/{id}", orderItemController::getOrderItemById);
+        app.post("/orderItems", orderItemController::createOrderItem);
+        app.put("/orderItems/{id}", orderItemController::updateOrderItem);
+        app.delete("/orderItems/{id}", orderItemController::deleteOrderItem);
 
         // --- Роуты для Доставок ---
         app.get("/shipments", shipmentController::getAll);
@@ -103,18 +103,18 @@ public class CosmeticApp {
         app.delete("/shipments/{id}", shipmentController::delete);
 
         // --- Роуты для Логистических отделов ---
-        app.get("/logistics-departments", logisticsDepartmentController::getAll);
-        app.get("/logistics-departments/{id}", logisticsDepartmentController::getById);
-        app.post("/logistics-departments", logisticsDepartmentController::create);
-        app.put("/logistics-departments/{id}", logisticsDepartmentController::update);
-        app.delete("/logistics-departments/{id}", logisticsDepartmentController::delete);
+        app.get("/logisticsDepartments", logisticsDepartmentController::getAll);
+        app.get("/logisticsDepartments/{id}", logisticsDepartmentController::getById);
+        app.post("/logisticsDepartments", logisticsDepartmentController::create);
+        app.put("/logisticsDepartments/{id}", logisticsDepartmentController::update);
+        app.delete("/logisticsDepartments/{id}", logisticsDepartmentController::delete);
 
         // --- Роуты для Истории статусов доставки ---
-        app.get("/shipment-status-history", shipmentStatusHistoryController::getAll);
-        app.get("/shipment-status-history/{id}", shipmentStatusHistoryController::getById);
-        app.post("/shipment-status-history", shipmentStatusHistoryController::create);
-        app.put("/shipment-status-history/{id}", shipmentStatusHistoryController::update);
-        app.delete("/shipment-status-history/{id}", shipmentStatusHistoryController::delete);
+        app.get("/shipmentStatusHistory", shipmentStatusHistoryController::getAll);
+        app.get("/shipmentStatusHistory/{id}", shipmentStatusHistoryController::getById);
+        app.post("/shipmentStatusHistory", shipmentStatusHistoryController::create);
+        app.put("/shipmentStatusHistory/{id}", shipmentStatusHistoryController::update);
+        app.delete("/shipmentStatusHistory/{id}", shipmentStatusHistoryController::delete);
 
         System.out.println("Server started at http://localhost:7070");
     }
